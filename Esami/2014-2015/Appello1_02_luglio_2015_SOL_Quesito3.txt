@@ -1,0 +1,8 @@
+A grandi linee (thx to: Luca D.)
+
+-ext2: sono un gruppo concatenato di puntatori quindi non importa nulla della contiguità.
+
+-fat: è una tabella indicizzata ed indicizza ogni blocco, quindi anche se fosse a contiguità nulla l indicizzazione sarebbe comunque ad ogni blocco.
+
+- NTFS: la contiguità influenza moltissimo sul peso della struttura perche la memorizzazione è indicizzata da un puntatore inizio e un puntatore fine per ogni blocco contiguo, ad esempio un file con contiguità massima avrebbe solo una coppia (inizio,fine) invece con contiguità nulla N coppie con N uguale al numero di blocco non contigui.
+

@@ -1,0 +1,137 @@
+Versione 7 giugno 2020
+
+-----
+
+Esempio 2
+Argomento Monitor
+slide numerata 68 di slide CS01 - Sincronizzazione
+
+Q01: Ho un dubbio per quanto riguarda l'esempio del codice del monitor, se alle procedure di creazione e consumo della risorsa posso accedervi solo in modo esclusivo, quando ad esempio il produttore va in wait a causa del buffer pieno rimane comunque all'interno della procedura quindi il consumatore non puo' accedere alla procedura di consumo generando un deadlock?
+
+R01: No, dopo l'invocazione del wait il processo invocante va in attesa ma esce anche dal monitor lasciando la possibilita' ad altri di accedervi; non causa dunque deadlock.
+
+-----
+
+Filosofo Mancino
+Argomento Sincronizzazione - Semafori
+slide numerata 26 (anche se 13esima) di CE01b - Sincronizzazione
+Q02: Ho un dubbio sulla soluzione che prevede l'inserimento di un "filosofo mancino". E' corretto dire che questo non fa altro che ridurre la possibilita' che tale filosofo venga eseguito? Quindi portando lo stesso speedup che porterebbe l'inserimento di una forchetta in piu'?
+
+R02: No, la probabilita' che trovi libere le forchette che prende, che siano sinistra o destra, non cambia
+Non sappiamo quale filosofo potra' cercare di mangiare prima e quindi quando occupera' alcune (quali?) forchette.
+Una forchetta in piu' non si puo' inserire: non sarebbe piu' il problema dato, sarebbe invece un problema naturalmente non soggetto a stallo visto che almeno uno dei filosofi troverebbe due forchette a disposizione, sempre.
+
+-----
+
+Filosofo Mancino
+Argomento Sincronizzazione - Semafori
+slide numerata 26 (anche se 13esima) di CE01b - Sincronizzazione
+
+Q03: Nel problema dei filosofi a cena, i filosofi mancini possono essere piu' di uno? La soluzione funzionerebbe ugualmente?
+
+R03: Si', l'importante e' che non siano tutti mancini o tutti destrorsi. Se ce n'e' ALMENO uno diverso allora si evita che si possa creare la condizione di attesa circolare.
+
+-----
+
+Argomento Ordinamento
+slide varie di esercizi su scheduling di processi
+
+Q04: Quando un processo viene prerilasciato (es. per scadenza quanto di tempo) ed esce dal processore per tornare in coda di pronti, se simultaneamente viene attivato un nuovo processo e anch'esso finisce in coda di pronti, con che ordine vengono inseriti i due processi nella coda?
+
+R04: Dipende. Se la coda e' ordinata secondo un meccanismo di priorità e i due processi hanno priorita' diverse, allora si rispetta l'ordine di priorita'. Se la coda e' ordinata secondo la durata dei processi, i processi si mettono in ordine di durata, ecc. Qualora due processi abbiano la stessa priorita' (che sia esplicita o implicita dovuta, ad esempio, alla durata) allora si va in ordine di arrivo in coda. La domanda dello studente fa riferimento in particolare al caso in cui i detti due processi abbiano la stessa priorita' esplicita o implicita. In quel caso come facciamo a determinare chi e' arrivato prima e quindi si ritroverà prima in coda? In effetti non e' possibile ed e' un caso solo teorico dovuto agli esercizi. Pertanto, negli esercizi quindi tipicamente viene fornita anche un'assunzione da usare in questi casi ("in caso di arrivi simultanei... si dia priorita' al processo che..."). 
+
+-----
+
+Argomento Fondamenti (Interruzioni/Interrupt)
+Slide 11 di CS03
+
+Q05: Non e' chiaro perche' sia meglio evitare il ricorso al polling per interagire con le periferiche. Con il polling l'interazione avverrebbe nel suo momento dedicato, senza quindi interrompere e causare mini-context-switch.
+
+R05: Il polling non è configurabile con la frequenza corretta. Se la frequenza e' troppo alta, il sistema passa troppo tempo a far polling senza che ci sia alcun evento e meno quindi a procedere con l'avanzamento dei processi. Con una frequenza troppo bassa, gli eventi si accumulano prima di essere gestiti e comunque eventi urgenti rischiano di non essere trattati in tempo. La gestione degli interrupt adottata e' una buona via di mezzo in cui si interrompe l'esecuzione del processo in corso solo brevemente e per capire l'urgenza e la tipologia di inerrupt (si continua a operare nello spazio del processo senza effettuare un vero context switch, come riportato anche dalla domanda). Le interruzioni saranno poi gestite pienamente nel momento piu' opportuno. 
+
+
+-----
+
+Argomento Gestione memoria (Strutture di gestione -1; bitmap di allocazione)
+Slide 18/20, numerata 171 di CS04-1
+
+Q06: A) Non mi e' chiaro perche' con il disco vuoto la bitmap occupa comunque spazio in RAM. B) Inoltre, con il disco pieno invece la bitmap occupa meno memoria di una lista allocata?
+
+R06: A) La bitmap ha una dimensione fissa che dipende dal numero di posizioni su disco da tracciare. Se il disco e' vuoto la bitmap e' piena di 0 ma comunque lo 0 e' un elemento scritto e che occupa spazio. 
+B) Gli elementi della lista dipendono dalle sequenze occupato/vuoto su disco. Quindi Con due dischi simili e occupati in percentuale totale  simile, comunque la disposizione delle sequenze occupato/vuoto puo' essere diversa e come tale anche il numero di elementi in lista e quindi la lunghezza/occupazione della lista di allocazione.
+
+
+-----
+
+Argomento Gestione memoria (Esercizi di gestione della memoria)
+Slide numerata 73 di CE04
+
+Q7: Nell'esercizio l'ordine degli elementi nei page frame non viene cambiato in tabella. Sarebbe corretto mantenere un ordine con nella riga piu' in basso l'elemento che non verra' riferito per piu' tempo e in alto quello che verra' riferito per primo? 
+
+R7: Si', e' corretto. Si puo' ordinare la tabella in modo che rappresenti l'ordine di rimpiazzo in caso di necessita'. Semplicemente, mentre e' molto utile farlo per i casi degli esercizi precedenti (FIFO, LRU...), non e' cosi' utile farlo per OPTIMAL in quanto l'informazione necessaria e' gia' disponibile nella riga dei riferimenti in alto (quella in rosso). Insomma potete adottare entrambe le modalita' e sono entrambe considerate corrette.
+
+-----
+
+Argomento Gestione memoria (Esercizi di gestione della memoria)
+Slide numerata 86 di CE04
+
+Q08: Nel caso A), il parametro R di C5 viene aggiornato a 1 ma il riferimento non cambia di posizione nella lista. Invece nel caso B, R di C2 viene aggiornato a 0, e C2 viene spostato alla coda della lista.
+Quindi è giusto in generale lasciare invariato l'ordine della lista quando R viene aggiornato a 1 (quindi la pagina viene riferita) e invece spostare in coda la pagina riferita meno recentemente se R da 1 viene aggiornato a 0?
+
+
+R08: Mi pare abbastanza corretta l'interpretazione ma se consideriamo il caso in questione e la politica second chance usata nell'esercizio (altre politiche potrebbero avere esito diverso). 
+
+Il caso di R che viene posto a 1 e' indipendente dalla politica di rimpiazzo adottata. Infatti, a prescindere dalla politica di rimpiazzo e da se mai avvenga un rimpiazzo, ogni volta che una pagina viene letta o scritta, il bit R viene posto uguale a 1 (se gia' era 1, rimane 1).
+Periodicamente (e sempre indipendentemente dal rimpiazzo) il sistema operativo azzera il bit R per far si' che rappresenti la condizione "aggiornato di RECENTE".
+Nell'esempio del caso A non c'e' rimpiazzo e quindi la lista non viene modificata se non per il bit R che diventa 1 (ma senza spostamento dell'elemento nella lista).
+
+Altra cosa e' cio' che avviene in caso di necessita' di rimpiazzo (Caso B). In quel caso, quel che accade dipende dalla politica di rimpiazzo. Nel caso dell'esercizio, second chance, si ragiona come per la FIFO tranne quando si cerchi di rimpiazzare una pagina con R=1. Con R=1, la pagina considerata viene spostata in fondo alla lista e il suo bit R viene posto uguale a 0.
+
+
+-----
+
+Argomento Gestione memoria (Esercizi di gestione della memoria)
+Slide numerata 87 di CE04
+esercizio 6-bis nel video CE04 - Parte C.
+
+Q09: Nel caso della politica di sostituzione second chance, se entrambi i processi di A fossero stati riferiti, si sarebbe scartato quello che è stato inserito per primo in memoria o ci sarebbero serviti altri dati per decidere quale dei due rimpiazzare?
+
+
+R09: In pratica un caso A1(37,1) - A0(50,1)
+
+A1 sarebbe stato visionato per primo, il suo bit R posto uguale a zero prima di essere portato in fondo alla lista ottenendo dunque A0(50,1) -A1(37,0)
+
+A questo punto sarebbe stato visionato anche A1, il suo bit R posto uguale a zero prima di essere portato in fondo alla lista ottenendo dunque A1(37,0) - A0(50,0)
+
+A questo punto si (ri)visiona A1 che viene dunque rimpiazzato e A9 aggiunto in fondo, ottenendo dunque A0(50,0) - A9(105,1)
+
+Insomma se tutti gli elementi hanno bit R=1, quello che succede e' che tutta la lista viene scorsa e alla fine ci si ritrova con la lista esattamente nell'ordine iniziale ma con tutti gli elementi aventi R=0
+
+-----
+
+Argomento Esercizi di Ricapitolazione
+Slide numerata 93 di CE08
+
+Q10: Perche' nell'esercizio 'Esercizio NTFS e Extfs' di 'E08 - Esercizi Ricapitolazione.pdf', per quanto riguarda la soluzione di NTFS, non si tiene conto dello spazio occupato nel record di base dalla memorizzazione dell'indirizzo del record secondario? 
+
+R10: Perche' nell'esercizio E08 si hanno sempre e solo 2 record. E' fisso e si puo' quindi assumere che siano in posizione nota uno rispetto all'altro. Es. consecutivi. 
+Tuttavia, visto che non vi sono assunzioni esplicite in questo senso, anche assumere che occorra lasciare uno spazio per l'indirizzamento del secondo record e' corretto, purche' lo studente si ricordi di dichiararne il motivo nel suo svolgimento.
+
+
+-----
+
+Argomento Testi di esame con soluzione
+Appello18set2007.pdf - Quarto quesito
+
+Q11: Nella parte di soluzione del quesito 4 che riguarda 'File system di tipo NTFS' c'e' scritto che servono 23 bit per indirizzare 8M record, ma che diventano 4B per il vincolo architetturale considerato piu' sopra. Perchè si approssima a 32 bit se il multiplo di 8 più vicino a 23 è 24?
+
+R11: Nel testo si menziona un vincolo ad avere gli indirizzi a 8 bit. Tuttavia, questo e' utilizzato ad inizio della soluzione, quando si trova che i servono almeno 26 bit e che quindi ne verranno usati 32. Da quel punto in poi, sappiamo che la nostra architettura utilizzerà 32 bit (4 Byte) per l'indirizzamento. Questo vale per tutto il resto dell'esercizio. Quindi, "il vincolo architetturale considerato piu' sopra" fa in realta' riferimento a quanto scritto a inizio soluzione e quindi a quei 32 bit.
+
+
+===============
+
+
+E01 - ERRATA CORRIGE video CE02-Parte B
+Quando calcoliamo il tempo di risposta per il Round Robin, nel video dico (a voce, verso il minuto 10 e 50 secondi) che il tempo di risposta di C e' 2. Questo e' sbagliato: il tempo di risposta di C e' 5
+
+===============

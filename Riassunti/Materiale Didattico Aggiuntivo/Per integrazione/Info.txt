@@ -1,0 +1,30 @@
+Link di riferimento: https://www.math.unipd.it/~cpalazzi/integrazioneso.html
+Questa pagina web ha lo scopo di fornire informazioni riguardo a come comportarsi per acquisire l'integrazione di 2 CFU di Sistemi Operativi, ove necessario nel passaggio al nuovo ordinamento.
+
+L'integrazione non e' particolarmente ardua da conseguire. Essa corrisponde a 2 crediti di laboratorio e dunque a 50 ore di lavoro da svolgere da parte dello studente. Dette 50 ore sono conteggiate includendo tutto il lavoro svolto: ripasso delle varie politiche, installazione del software, cattura delle videate per creare immagini, scrittura del documento, preparazione della email da inviarmi, ecc.
+
+Eventuali domande di chiarimento vanno inviate a
+cpalazzi [at] math.unipd.it
+
+_______________________________________
+
+
+MODALITA'
+
+In fondo a questa pagina si trovano dei software per simulare:
+A) le politiche di ordinamento dei processi;
+B) le politiche di gestione della memoria virtuale.
+
+Lo studente deve utilizzare due di questi strumenti, uno per il gruppo A) e uno per il gruppo B). Il compito da svolgere e' quello di pensare a un esercizio significativo per ognuno dei due simulatori scelti e realizzarlo in modo da mettere in evidenza le proprieta' delle varie politiche. Lo studente puo' ispirarsi alle esercitazioni svolte in classe durante gli anni precedenti o ai compiti d'esame.
+
+Per dimostrare il lavoro svolto, lo studente deve scrivere una relazione sintetica ed essenziale su quanto svolto (max 10 pagine comprese figure: grafici e videate) indicando i simulatori scelti, configurazione dell'esercizio, i risultati e una breve discussione delle proprieta' emerse.
+
+Infine, lo studente dovra' inviare per email al sottoscritto (cpalazzi [at] math.unipd.it) la relazione e i file di configurazione degli esercizi simulati. L'oggetto della mail inviata al docente dovra' essere: "Integrazione Sistemi Operativi"
+
+L'integrazione ha voto e concorre, tramite media pesata sui crediti col voto precedentemente conseguito nell'esame di Sistemi Operativi, a formare il nuovo voto d'esame. La registrazione dell'integrazione avviene in concomitanza con i regolari appelli d'esame del corso di Sistemi Operativi. L'invio della relazione di cui sopra va effettuato almeno una settimana prima della data di possibile registrazione.
+
+_______________________________________
+
+
+SOFTWARE SIMULATORI
+(Presenti nella stessa cartella)

@@ -1,0 +1,58 @@
+DOCENTE: Claudio Palazzi - cpalazzi@math.unipd.it
+
+
+
+
+TITOLO TESTO : Sistemi Operativi
+
+LIBRO DI TESTO: 
+- A S Tanenbaum. Modern Operating Systems. 3rd (2008) o 2nd (2001) Edition, Prentice Hall.
+
+
+
+
+
+ALTRO MATERIALE: 
+slides
+
+
+
+
+
+OBIETTIVI CORSO:
+Il corso, che ha un taglio fortemente orientato alle architetture software di sistema in generale e al sistema operativo in particolare, si propone 2 obiettivi:
+- Completare e approfondire l'analisi dell'architettura dei sistemi monoprocessore sviluppata nel I anno di corso, estendola anche ai fondamenti dei sistemi multiprocessore e distribuiti.
+- Fornire una visione concreta e critica di alcune scelte progettuali e problemi architetturali visti nel corso, come emergono dal progetto dei sistemi operativi GNU/Linux e Microsoft Windows.
+
+In corso prevede anche alcune esercitazioni, nelle quali si discuteranno problemi tipo e le loro soluzioni, e lezioni di laboratorio, nelle quali si forniranno dei percorsi didattici relativi al funzionamento dei sistemi operativi (es. software didattici, comandi linux relativi ad aspetti pratici del corso).
+
+
+
+MODALITA' ESAME: 
+Scritto obbligatorio con orale opzionale
+
+
+TOTALE CREDITI: 8 (6 + 2)
+
+
+
+Lezione/Esercitazione Frontale
+
+Crediti	- Argomento
+0.5	- Introduzione ai S.O.
+1	- Sincronizzazione Processi ambito locale(con ex. 2 ore)
+1	- Scheduling Processi (con ex. 2 ore)
+1	- Gestione Memoria (con ex. 2 ore)
+1	- File system (con ex. 2 ore)
+1.50	- Analisi di S.O. reali: UNIX, GNU/Linux, Windows
+ORE DI LEZIONE FRONTALE: 48 
+
+Laboratorio
+
+Crediti	- Argomento 
+2	- Utilizzo di software didattico volto a verificare
+	  praticamente il funzionamento e le caratteristiche
+	  di politiche e meccanismi studiati in classe.
+	  Allo studente verrà fornito un percorso guidato con
+	  tappe di apprendimento.
+ORE DI LEZIONE FRONTALE: 6

@@ -1,0 +1,22 @@
+docente:
+Claudio Enrico Palazzi
+
+
+
+homepage:
+http://www.math.unipd.it/~cpalazzi/
+
+
+
+
+Slide 2011/2012:
+http://www.math.unipd.it/~cpalazzi/sistemioperativi.html
+
+Slides alternative (docente SO di Genova):
+http://www.disi.unige.it/person/DelzannoG/SO1/
+
+Slides alternative (docente SO di Napoli):
+http://wpage.unina.it/lapegna/educational/sistop9cfu.html
+
+Appunti S/O:
+http://www.xelon.it/appunti/sistemi-operativi/introduzione.php
